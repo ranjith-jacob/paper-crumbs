@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Book List</h1>
 <ul>
-    {% for book in books %}
+    {% for book in book_list %}
     <li>{{book.name}} by {{book.author}} | {{book.series}} | {{book.published_year}}</li>
     {% endfor %}
 </ul>

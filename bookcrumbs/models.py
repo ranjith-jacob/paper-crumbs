@@ -8,5 +8,5 @@ class Book(models.Model):
     series = models.CharField(max_length=200)
     genre = models.CharField(max_length=50)
     published_year = models.IntegerField()
-    character = models.CharField(max_length=100)
-    location = models.CharField(max_length=200)
+    characters = models.CharField(max_length=100)
+    locations = models.CharField(max_length=200)

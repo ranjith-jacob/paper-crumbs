@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Book List</h1>
+<ul>
+    {% for book in books %}
+    <li>{{book.name}} by {{book.author}} | {{book.series}} | {{book.published_year}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .models import Book
 
@@ -12,4 +12,7 @@ def home(request):
 #     return render(request, "books/book_list.html", {"books": books})
 
 class BookList(ListView):
+    model = Book
+
+class BookDetail(DetailView):
     model = Book

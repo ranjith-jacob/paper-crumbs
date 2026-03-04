@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Book(models.Model):
@@ -20,6 +21,7 @@ class Book(models.Model):
         max_length=200,
         default="N/A",
     )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.name} by {self.author} | {self.series} | {self.published_year}"

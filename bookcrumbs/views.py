@@ -2,12 +2,16 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.views import LoginView
 
 from .models import Book
 
 # Create your views here.
-def home(request):
-    return render(request, "index.html")
+# def home(request):
+#     return render(request, "index.html")
+
+class Home(LoginView):
+    template_name = "index.html"
 
 # def book_index(request):
 #     books = Book.objects.all()

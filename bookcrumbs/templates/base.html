@@ -18,10 +18,21 @@
         </div>
         <nav>
             <ul>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'book-list' %}">All Books</a></li>
                 <li><a href="">All Characters</a></li>
                 <li><a href="">All Locations</a></li>
                 <li><a href="{% url 'book-create' %}">Add Book</a></li>
+                <li>
+                    <form id="logout-form" method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit">Log out</button>
+                    </form>
+                </li>
+                {% else %}
+                <li><a href="">Placeholder link</a></li>
+                <li><a href="{% url 'home' %}">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

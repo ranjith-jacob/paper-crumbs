@@ -5,6 +5,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Book
 
@@ -19,16 +21,19 @@ class Home(LoginView):
 #     books = Book.objects.all()
 #     return render(request, "books/book_list.html", {"books": books})
 
-class BookList(ListView):
+class BookList(LoginRequiredMixin, ListView):
     model = Book
 
     def get_queryset(self):
         return Book.objects.filter(user=self.request.user)
 
-class BookDetail(DetailView):
+class BookDetail(LoginRequiredMixin, DetailView):
     model = Book
 
-class BookCreate(CreateView):
+    def get_queryset(self):
+        return Book.objects.filter(user=self.request.user)
+
+class BookCreate(LoginRequiredMixin, CreateView):
     model = Book
     # fields = "__all__"
     fields = ["image", "name", "author", "series", "genre", "published_year", "characters", "locations"]
@@ -37,12 +42,16 @@ class BookCreate(CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class BookUpdate(UpdateView):
+class BookUpdate(LoginRequiredMixin, UpdateView):
     model = Book
     # fields = "__all__"
     fields = ["image", "name", "author", "series", "genre", "published_year", "characters", "locations"]
 
-class BookDelete(DeleteView):
+#! added to prevent unauthorised access, in debug environment, to /books/:book_id/update via URL manipulation
+    def get_queryset(self):
+        return Book.objects.filter(user=self.request.user)
+
+class BookDelete(LoginRequiredMixin, DeleteView):
     model = Book
     success_url = reverse_lazy("book-list")
 
@@ -53,9 +62,9 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('book-list')
+            return redirect("book-list")
         else:
             error_message = "Invalid sign up, please try again!"
     form = UserCreationForm()
-    context = {'form': form, "error_message": error_message}
+    context = {"form": form, "error_message": error_message}
     return render(request, "signup.html", context)

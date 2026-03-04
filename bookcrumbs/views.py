@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView
 
 from .models import Book
 
@@ -16,3 +17,7 @@ class BookList(ListView):
 
 class BookDetail(DetailView):
     model = Book
+
+class BookCreate(CreateView):
+    model = Book
+    fields = "__all__"

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Delete {{book.name}}?</h3>
+<form action="" method="POST">
+    {% csrf_token %}
+    <a href="">Cancel</a>
+    <button type="submit">Confirm Delete</button>
+</form>
+{% endblock content %}

@@ -26,3 +26,7 @@ class BookCreate(CreateView):
 class BookUpdate(UpdateView):
     model = Book
     fields = "__all__"
+
+class BookDelete(DeleteView):
+    model = Book
+    success_url = reverse_lazy("book-list")

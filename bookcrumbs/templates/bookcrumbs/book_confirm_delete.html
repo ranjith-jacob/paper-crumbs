@@ -4,7 +4,7 @@
 <h3>Delete {{book.name}}?</h3>
 <form action="" method="POST">
     {% csrf_token %}
-    <a href="">Cancel</a>
+    <a href="{% url 'book-detail' book.id %}">Cancel</a>
     <button type="submit">Confirm Delete</button>
 </form>
 {% endblock content %}

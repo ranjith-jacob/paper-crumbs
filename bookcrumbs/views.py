@@ -25,11 +25,17 @@ class BookDetail(DetailView):
 
 class BookCreate(CreateView):
     model = Book
-    fields = "__all__"
+    # fields = "__all__"
+    fields = ["image", "name", "author", "series", "genre", "published_year", "characters", "locations"]
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class BookUpdate(UpdateView):
     model = Book
-    fields = "__all__"
+    # fields = "__all__"
+    fields = ["image", "name", "author", "series", "genre", "published_year", "characters", "locations"]
 
 class BookDelete(DeleteView):
     model = Book

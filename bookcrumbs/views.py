@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 from .models import Book
 
@@ -19,5 +20,9 @@ class BookDetail(DetailView):
     model = Book
 
 class BookCreate(CreateView):
+    model = Book
+    fields = "__all__"
+
+class BookUpdate(UpdateView):
     model = Book
     fields = "__all__"

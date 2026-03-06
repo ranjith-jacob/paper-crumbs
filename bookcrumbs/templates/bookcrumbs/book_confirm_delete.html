@@ -1,10 +1,17 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock head %}
 
 {% block content %}
-<h3>Delete {{book.name}}?</h3>
-<form action="" method="POST">
-    {% csrf_token %}
-    <a href="{% url 'book-detail' book.id %}">Cancel</a>
-    <button type="submit">Confirm Delete</button>
-</form>
+<div class="book-conf-delete-wrapper">
+    <h3>Delete {{book.name}}?</h3>
+    <form action="" method="POST" class="book-conf-delete-form">
+        {% csrf_token %}
+        <a href="{% url 'book-detail' book.id %}" class="btn submit cancel-btn">Cancel</a>
+        <button type="submit" class="btn submit delete-btn">Confirm</button>
+    </form>
+</div>
 {% endblock content %}

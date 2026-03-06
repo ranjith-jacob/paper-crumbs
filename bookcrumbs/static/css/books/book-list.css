@@ -1,0 +1,41 @@
+.book-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    max-width: 70vw;
+    margin: 0 auto;
+}
+
+.book-list-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+}
+
+.book-list-card {
+    display: flex;
+    list-style: none;
+    width: 10rem;
+    height: 6rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(2, 94, 43, 0.192);
+    transition: 0.2s ease;
+    
+}
+
+.book-list-card-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.book-list-card-container a:visited {
+    text-decoration: none;
+}
+
+.book-list-card:hover {
+    transform: translateY(-3px)scale(1.02);
+}

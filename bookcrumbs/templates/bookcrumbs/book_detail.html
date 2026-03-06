@@ -1,19 +1,45 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/books/book-detail.css' %}" />
+{% endblock head %}
 
 {% block content %}
-<h1>Book Details</h1>
-<ul>
-    <li>
-        <div><img src="{{book.image}}" alt="{{book.name}}" width="250"/></div>
-        <p><strong><em>{{book.name}}</em></strong> by {{book.author}}</p>
-        <p><small>{{book.series}}</small> | <small>{{book.published_year}}</small></p>
-        <p>Genres: {{book.genre}} </p>
-        <p>Characters: {{book.characters}}</p>
-        <button type="submit">View all Characters</button>
-        <p>Locations: {{book.locations}}</p>
-        <button type="submit">View all Locations</button>
-    </li>
-</ul>
-<a href="{% url 'book-update' book.id %}">Edit</a>
-<a href="{% url 'book-delete' book.id %}">Delete</a>
+<div class="book-details-wrapper">
+    <h2>{{book.name}}</h2>
+    <ul>
+        <li>
+            <div class="book-details">
+                <div class="book-details-image">
+                    <img src="{{book.image}}" alt="{{book.name}}" width="250"/>
+                </div>
+                <div class="book-details-metadata">
+                    {% comment %}
+                        <p><strong><em>{{book.name}}</em></strong> by {{book.author}}</p>
+                        <p><small>{{book.series}}</small> | <small>{{book.published_year}}</small></p>
+                        <p>Genres: {{book.genre}} </p>
+                        <p>Characters: {{book.characters}}</p>
+                        <button type="submit">View all Characters</button>
+                        <p>Locations: {{book.locations}}</p>
+                        <button type="submit">View all Locations</button>
+                    {% endcomment %}
+
+                    <p><strong>{{book.published_year}}</strong> | Series: <em>{{book.series}}</em></p>
+                    <p>Author: {{book.author}}</p>
+                    
+                    <p>Genres: {{book.genre}} </p>
+                    <p>Characters: {{book.characters}}</p>
+                    
+                    <p>Locations: {{book.locations}}</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="book-details-btns">
+        <a href="{% url 'book-update' book.id %}">Edit</a>
+        <a href="{% url 'book-delete' book.id %}">Delete</a>
+    </div>
+</div>
 {% endblock content %}

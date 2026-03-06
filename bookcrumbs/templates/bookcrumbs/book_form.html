@@ -1,12 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock head %}
 
 {% block content %}
-<h2> Book Create Page</h2>
-<form action="" method="POST">
-    {% csrf_token %}
-    <table>
-        {{form.as_table}}
-    </table>
-    <button type="submit">Submit</button>
-</form>
+<div class="book-create-form-wrapper">
+    <h2>Add Book</h2>
+
+    <form action="" method="POST" class="book-create-form">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit" class="btn submit">Submit</button>
+    </form>
+</div>
 {% endblock content %}

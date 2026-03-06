@@ -1,0 +1,137 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 50vw;
+  align-items: center;
+}
+
+ .form-container table {
+  padding: 0 40px;
+  width: 100%;
+  border-spacing: 0 20px;
+}
+
+.form-container th {
+  text-align: left;
+  padding: 6px 20px 0 0;
+  font-weight: normal;
+  vertical-align: top;
+}
+
+.form-container td {
+  max-width: 60%;
+}
+
+.form-container td > * {
+  width: 50%;
+  padding: 2px 4px;
+  
+}
+
+/* td > textarea {
+  height: calc(4 * var(--font-l) + 8px);
+  font-family: inherit;
+} */
+
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 3rem;
+    padding: 3rem;
+    align-items: center;
+}
+
+.form-container table input {
+      border-radius: 4px;
+  border-style: inset;
+  width: 60%;
+  
+}
+
+.book-create-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 3rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.book-create-form-wrapper table {
+    padding: 0 40px;
+  width: 100%;
+  border-spacing: 0 20px;
+}
+
+.book-create-form-wrapper th {
+  text-align: left;
+  padding: 6px 20px 0 0;
+  font-weight: normal;
+  vertical-align: top;
+}
+
+.book-create-form-wrapper td {
+  max-width: 60%;
+}
+
+.book-create-form-wrapper td > * {
+  width: 50%;
+  padding: 2px 4px;
+  
+}
+
+.book-create-form-wrapper table input {
+      border-radius: 4px;
+  border-style: inset;
+  width: 100%;
+  
+}
+
+.book-create-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-conf-delete-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 3rem;
+    margin-top: 4rem;
+    border-radius: 3px;
+    width: 20vw;
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
+}
+
+.book-conf-delete-form {
+    display: flex;
+    gap:1rem;
+    margin-bottom: 2rem;
+}
+
+.cancel-btn {
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    text-align: center;
+    align-self: center;
+    padding: 1rem 0;
+}
+
+.delete-btn:hover {
+    border-color: red;
+}

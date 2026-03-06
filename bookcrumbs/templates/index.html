@@ -1,16 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Book Index</h1>
+<div class="book-cover">
+    <article>
+        <div class="cover-back"></div>
+        <div class="pages">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="cover">
+            <span class="title">Paper Crumbs</span>
+        </div>
+        <div class="spine">
+            <span></span>
+        </div>
+        <div class="spine-shadow"></div>
+    </article>
 
-{% if not user.is_authenticated %}
-<section>
-  <form action="{% url 'home' %}" method="post" class="login">
-    <h1>Login</h1>
-    {% csrf_token %} {{ form.as_p }}
-    <input type="hidden" name="next" value="{{ next }}" />
-    <button type="submit" class="btn submit">Login</button>
-  </form>
-</section>
-{% endif %}
+    {% if not user.is_authenticated %}
+    <section class="signin-form">
+        <form action="{% url 'home' %}" method="post" class="login">
+        <h2>Login</h2>
+        {% csrf_token %} {{ form.as_p }}
+        <input type="hidden" name="next" value="{{ next }}" />
+        <button type="submit" class="btn submit">Login</button>
+        </form>
+    </section>
+    {% endif %}
+
+</div>
 {% endblock content %}

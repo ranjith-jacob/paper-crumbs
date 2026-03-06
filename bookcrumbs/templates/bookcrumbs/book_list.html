@@ -1,14 +1,25 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/books/book-list.css' %}">
+{% endblock head %}
 
 {% block content %}
-<h1>Book List</h1>
-<ul>
-    {% for book in book_list %}
-        <li>
+<div class="book-list-wrapper">
+    <h1>Your Shelf</h1>
+    <ul>
+        <div class="book-list-card-container">
+            {% for book in book_list %}
             <a href="{% url 'book-detail' book.id %}">
-                {{book.name}} by {{book.author}} | {{book.series}} | {{book.published_year}}
+                <div class="book-list-card">
+                    <li>
+                        <em>{{book.name}}</em> by {{book.author}} </br></br><em>{{book.series}}</em> | <strong></strong>{{book.published_year}}</strong>
+                    </li>
+                </div>
             </a>
-        </li>
-    {% endfor %}
-</ul>
+            {% endfor %}
+        </div>
+    </ul>
+</div>
 {% endblock content %}

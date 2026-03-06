@@ -141,7 +141,7 @@ article {
     left: 16%;
     width: 70%;
     font-size: 6rem;
-    font-family: sans-serif;
+    font-family: "Texturina", sans-serif;
     text-shadow: 1px 1px 10px rgba(0,0,0,0.8);
     text-align: center;
     transform: rotateX(4deg) rotateY(-30deg) rotateZ(0deg) translateX(0px);

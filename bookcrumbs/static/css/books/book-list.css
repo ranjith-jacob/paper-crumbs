@@ -12,7 +12,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
-    
 }
 
 .book-list-card {
@@ -24,7 +23,6 @@
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(2, 94, 43, 0.192);
     transition: 0.2s ease;
-    
 }
 
 .book-list-card-container a {

@@ -15,22 +15,10 @@
                     <img src="{{book.image}}" alt="{{book.name}}" width="250"/>
                 </div>
                 <div class="book-details-metadata">
-                    {% comment %}
-                        <p><strong><em>{{book.name}}</em></strong> by {{book.author}}</p>
-                        <p><small>{{book.series}}</small> | <small>{{book.published_year}}</small></p>
-                        <p>Genres: {{book.genre}} </p>
-                        <p>Characters: {{book.characters}}</p>
-                        <button type="submit">View all Characters</button>
-                        <p>Locations: {{book.locations}}</p>
-                        <button type="submit">View all Locations</button>
-                    {% endcomment %}
-
                     <p><strong>{{book.published_year}}</strong> | Series: <em>{{book.series}}</em></p>
                     <p>Author: {{book.author}}</p>
-                    
                     <p>Genres: {{book.genre}} </p>
                     <p>Characters: {{book.characters}}</p>
-                    
                     <p>Locations: {{book.locations}}</p>
                 </div>
             </div>

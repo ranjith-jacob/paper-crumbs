@@ -1,38 +1,32 @@
 .form-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 50vw;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 50vw;
+    align-items: center;
 }
 
- .form-container table {
-  padding: 0 40px;
-  width: 100%;
-  border-spacing: 0 20px;
+.form-container table {
+    padding: 0 40px;
+    width: 100%;
+    border-spacing: 0 20px;
 }
 
 .form-container th {
-  text-align: left;
-  padding: 6px 20px 0 0;
-  font-weight: normal;
-  vertical-align: top;
+    text-align: left;
+    padding: 6px 20px 0 0;
+    font-weight: normal;
+    vertical-align: top;
 }
 
 .form-container td {
-  max-width: 60%;
+    max-width: 60%;
 }
 
-.form-container td > * {
-  width: 50%;
-  padding: 2px 4px;
-  
+.form-container td>* {
+    width: 50%;
+    padding: 2px 4px;
+
 }
-
-/* td > textarea {
-  height: calc(4 * var(--font-l) + 8px);
-  font-family: inherit;
-} */
-
 
 .book {
     display: flex;
@@ -50,10 +44,9 @@
 }
 
 .form-container table input {
-      border-radius: 4px;
-  border-style: inset;
-  width: 60%;
-  
+    border-radius: 4px;
+    border-style: inset;
+    width: 60%;
 }
 
 .book-create-form-wrapper {
@@ -68,32 +61,30 @@
 
 .book-create-form-wrapper table {
     padding: 0 40px;
-  width: 100%;
-  border-spacing: 0 20px;
+    width: 100%;
+    border-spacing: 0 20px;
 }
 
 .book-create-form-wrapper th {
-  text-align: left;
-  padding: 6px 20px 0 0;
-  font-weight: normal;
-  vertical-align: top;
+    text-align: left;
+    padding: 6px 20px 0 0;
+    font-weight: normal;
+    vertical-align: top;
 }
 
 .book-create-form-wrapper td {
-  max-width: 60%;
+    max-width: 60%;
 }
 
-.book-create-form-wrapper td > * {
-  width: 50%;
-  padding: 2px 4px;
-  
+.book-create-form-wrapper td>* {
+    width: 50%;
+    padding: 2px 4px;
 }
 
 .book-create-form-wrapper table input {
-      border-radius: 4px;
-  border-style: inset;
-  width: 100%;
-  
+    border-radius: 4px;
+    border-style: inset;
+    width: 100%;
 }
 
 .book-create-form {
@@ -118,7 +109,7 @@
 
 .book-conf-delete-form {
     display: flex;
-    gap:1rem;
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
@@ -134,4 +125,8 @@
 
 .delete-btn:hover {
     border-color: red;
+}
+
+.red-text {
+    color: red;
 }

@@ -4,7 +4,7 @@
 
 <h3>Getting Started:</h3>
 <ul>
-    <li><h4>Test my app here: <a href="#" target="_blank">Heroku | Paper Crumbs</a></h4></li>
+    <li><h4>Test my app here: <a href="https://paper-crumbs-6914a4d572c8.herokuapp.com/" target="_blank">Heroku | Paper Crumbs</a></h4></li>
     <li><h4>Planning materials: <a href="https://trello.com/b/zUplYZSu/proj-4-planning" target="_blank">Trello | Paper Crumbs</a></h4></li>
 </ul>
 
